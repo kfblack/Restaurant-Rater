@@ -1,12 +1,12 @@
 # Restaurant Rater
-#### Date: 12/6/2023
+#### Date: 12/9/2023
 #### By: Kalin Black 
 #### [Linkedin](https://www.linkedin.com/in/kalin-black/) | [GitHub](https://github.com/kfblack)
 ***
 #### **_Description_**
-This project is a browser-based game utilizing aspects of HTML, CSS and JavaScript. The game was made for the General Assembly software engineering immersive program as project #1, during Week 3 of the cohort. Battleship entails the player having to randomly select pieces of the opponents board to target, and the gaol is to sink all opposing players' ships. This is a turned-based game, and the first player to sink all of the oppositions' ships wins!
+This project is a full-stack application involving the use of several technologies, as listed below. This app was created for the General Assembly software engineering immersive program as project #2, during Week 6 of the cohort. 
 
-In order to play the game, you need to navigate to the hyperlink below, then click "continue" to reach the second page for ship selection. From there, drag your ships into the grid, and have the second player do the same. Once completed, click "start game" where all ships will dissappear and you must click on the respective boxes to try to sink each other's ships. The first to sink all ships will be notified with a winning message, then you can click "restart" to replace ships and start again!
+In order to access the application, you need to navigate to the hyperlink below, then will be asked to login via Google. This is recommended since without logging in, you will have a limited scope of what you can view/what features you may access. From there, you will have access to all the features of the application, including making reviews, commenting/rating others' reviews, and much more! You may also choose to logout once you are finished using the application!
 ***
 #### **_Technologies Used_**
 - HTML
@@ -22,29 +22,27 @@ In order to play the game, you need to navigate to the hyperlink below, then cli
 - Heroku
 ***
 #### **_Getting Started_**
-[Click here to access the app!]() | [Excalidraw Wireframe]() | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD]()
+[Click here to access the app!]() | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD]()
 ***
 #### **_Screenshots_**
 
 ##### Starting Screen 
-![Intro. Screen](https://i.postimg.cc/GmC0NZS9/Start-Screen.png)
+![Landing Page]()
 
 ##### Ship Selection
-![Secondary Screen](https://i.postimg.cc/V652n15Z/Ship-Selection.png)
+![User Login Screen]()
 
 ##### Gameplay 
-![Game in Progress](https://i.postimg.cc/XYQ28hRR/Gameplay.png)
+![Reviews Tab]()
 
 ##### Winning Screen 
-![Game Over Screen](https://i.postimg.cc/5ydpyMzC/Winner-Screen.png)
+![My Reviews Tab]()
 
 ***
 #### **_Future Updates_**
-- [ ] Incorporate actual ships as gamepieces 
-- [ ] Have the game adjust appropriatley to different sized screens 
-- [ ] Insert effects, such as explosions when a hit occurs
-- [ ] Have ships span multiple cells according to length 
-- [ ] Include a Player vs. Computer mode with varied difficulties
+- [ ] Allow for incorporation of 3rd Party API's
+- [ ] Add location feature to specify reviews/restaurants near your location
+- [ ] Incorporate more features, such as reviews for alternate products other than restaurants
 ***
 #### **_Credits_**
 
