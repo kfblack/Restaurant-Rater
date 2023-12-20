@@ -8,9 +8,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <a href="/">Home</a>
-    | 
-    <a href="/reviews">All Reviews</a>
-    |
-    <a href="/reviews/new">New Review</a>
+    <nav>
+        <% if (user) { %>
+            <a href="/">Home</a>
+            |    
+            <a href="/reviews">All Reviews</a>
+            |
+            <a href="/reviews/new">New Review</a>
+            |
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>  
     <h1>Restaurant Rater</h1>
