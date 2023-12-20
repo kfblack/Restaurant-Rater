@@ -22,20 +22,20 @@ In order to access the application, you need to navigate to the hyperlink below,
 - Heroku
 ***
 #### **_Getting Started_**
-[Click here to access the app!]() | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD]()
+[Click here to access the app!]() | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD](https://drive.google.com/file/d/1VMSTR3sEYq-aAOYBFPLRaMHZ3TUr-1tT/view?usp=sharing)
 ***
 #### **_Screenshots_**
 
 ##### Starting Screen 
 ![Landing Page]()
 
-##### Ship Selection
+##### User Login
 ![User Login Screen]()
 
-##### Gameplay 
+##### Reviews View 
 ![Reviews Tab]()
 
-##### Winning Screen 
+##### User Reviews View 
 ![My Reviews Tab]()
 
 ***
@@ -46,7 +46,5 @@ In order to access the application, you need to navigate to the hyperlink below,
 ***
 #### **_Credits_**
 
-##### Gameplay Rules: [Rules of Battleship](https://www.hasbro.com/common/instruct/battleship.pdf)
-##### Images: [Wireframe Background](https://warontherocks.com/wp-content/uploads/2020/12/6432150-1-1024x654.jpg) 
-##### Music: [Background Music](https://mixkit.co/free-stock-music/tag/video-game/?page=2) | [Button Click Sound](https://mixkit.co/free-sound-effects/click/?page=2) | [Rotate Button Click Sound](https://mixkit.co/free-sound-effects/click/) | [Winner Music](https://mixkit.co/free-stock-music/tag/video-game/?page=2) | [Hit and Miss Sounds](https://mixkit.co/free-sound-effects/bomb/) 
-##### Code Help: [Drag and Drop](https://www.youtube.com/watch?v=wBnHmV_LBpE&ab_channel=TheCodeCreative) | [Ship Rotation](https://www.youtube.com/watch?v=Ubh_k18sX4E&t=2650s&ab_channel=CodewithAniaKub%C3%B3w) | [Debugging Help](https://openai.com/blog/chatgpt)
+##### Images: []() 
+##### Code Help: [Debugging Help](https://openai.com/blog/chatgpt) | []() 
