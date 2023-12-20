@@ -7,6 +7,7 @@ const session = require("express-session");
 const passport = require("passport");
 require('dotenv').config();
 require("./config/database");
+require("./config/passport");
 
 const indexRouter = require('./routes/index');
 const reviewsRouter = require('./routes/reviews');
@@ -26,7 +27,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
