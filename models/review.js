@@ -24,6 +24,13 @@ const reviewSchema = new Schema({
         type: String,
         required: true
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true //do I need to include this to ensure people are owners of reviews? 
+    },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });
