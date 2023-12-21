@@ -5,17 +5,16 @@ function newReview(req, res) {
 }
 
 async function create(req, res) {
-    const reviews = await Review.findById(req.params.id);
     req.body.user = req.user._id;
-    req.body.userName = req.user.name; //is this stuff related to what I need? 
+    req.body.userName = req.user.name; 
     req.body.userAvatar = req.user.avatar; 
-    reviews.review.push(req.body);
     try {
-        await reviews.save();
+        let response = await Review.create(req.body);
+        res.redirect("/reviews");
     } catch (err) {
         console.log(err);
+        res.redirect("/reviews/new");
     }
-    res.redirect(`/reviews/${reviews._id}`);
 }
 
 async function index(req, res) {

@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    name: {
-        type: String, 
+    restaurant: {
+        type: Schema.Types.ObjectId,
+        ref: "Restaurant",
         required: true
-    },
-    location: {
-        type: String,
-        required: true,
     },
     date: {
         type: Date,
@@ -27,7 +24,7 @@ const reviewSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: true //do I need to include this to ensure people are owners of reviews? 
+        required: true 
     },
     userName: String,
     userAvatar: String

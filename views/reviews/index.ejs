@@ -4,21 +4,21 @@
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Location</th>
+            <th>Restaurant Info.</th>
             <th>Date</th>
             <th>Rating</th>
             <th>Description</th>
+            <th>User Name</th>
         </tr>
     </thead>
     <tbody>
         <% reviews.forEach(r => { %>
         <tr>
-            <td><%= r.name %></td>
-            <td><%= r.location %></td>
+            <td><%= r.restaurant %></td>
             <td><%= r.date %></td>
             <td><%= r.rating %></td>
             <td><%= r.description %></td>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
         </tr>
         <% }) %>
     </tbody>
