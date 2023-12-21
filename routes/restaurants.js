@@ -8,6 +8,7 @@ router.get("/new", ensureLoggedIn, restaurantsCtrl.new);
 router.get("/", ensureLoggedIn, restaurantsCtrl.index);
 router.post("/", ensureLoggedIn, restaurantsCtrl.create);
 router.get("/:id", ensureLoggedIn, restaurantsCtrl.show);
+router.get("/:id/edit", ensureLoggedIn, restaurantsCtrl.edit);
 router.put("/:id", ensureLoggedIn, restaurantsCtrl.update);
 
 

@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
 <h2>Edit Restaurant</h2>
-<form action="/restaurants/<%= restaurant._id %>" method="POST">
+<form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
     <label>Name:
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%= restaurant.name %>">
     </label><br>
     <label>Location:
-        <input type="text" name="location">
+        <input type="text" name="location" value="<%= restaurant.location %>">
     </label><br>
     <label>Hours of Operation:
-        <input type="text" name="hours">
+        <input type="text" name="hours" value="<%= restaurant.hours %>">
     </label><br>
     <button type="submit">Submit</button>
 </form>

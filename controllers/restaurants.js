@@ -35,10 +35,23 @@ async function show(req, res) {
     }
 }
 
+async function edit(req, res) {
+    try {
+        let restaurant = await Restaurant.findById(req.params.id);
+        res.render("restaurants/update", {restaurant})
+    } catch (err) {
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
 async function update(req, res) {
     try {
         let restaurant = await Restaurant.findById(req.params.id);
-        res.render("restaurants/update", restaurant)
+        restaurant.name = req.body.name;
+        restaurant.location = req.body.location;
+        restaurant.hours = req.body.hours;
+        await restaurant.save();
+        res.redirect("/restaurants")
     } catch (err) {
         res.render("restaurants/show", {errMsg: err.message});
     }
@@ -50,5 +63,6 @@ module.exports = {
     create, 
     index, 
     show, 
+    edit, 
     update
 }
