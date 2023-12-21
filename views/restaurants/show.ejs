@@ -26,6 +26,8 @@
                 <th>Rating</th>
                 <th>Description</th>
                 <th>User Name</th>
+
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -35,6 +37,13 @@
                     <td><%= r.rating %></td>
                     <td><%= r.description %></td>
                     <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+                    <td>
+                        <% if (user?._id.equals(r.user)) { %>
+                        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                        <% } %></td>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>

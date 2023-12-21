@@ -16,6 +16,20 @@ async function create(req, res) {
     res.redirect(`/restaurants/${restaurant._id}`)
 }
 
+async function deleteReview(req, res) {
+    try {
+        const review = await Review.findById(req.params.id);
+        const restaurant = await Restaurant.findById(review.restaurant);
+        await Review.findByIdAndDelete(req.params.id);
+        restaurant.reviews = undefined;
+        await restaurant.save();
+        res.redirect(`/restaurants/${restaurant._id}`);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
-    create
+    create,
+    delete: deleteReview
 }

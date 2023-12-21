@@ -8,6 +8,8 @@
             <th>Location</th>
             <th>Hours of Operation</th>
             <th>Reviews</th>
+
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +19,11 @@
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
             <td><a href="/restaurants/<%= r._id %>">Reviews</a></td>
+            <td>
+                <form action="/restaurants/<%= r._id %>?_method=PUT" method="POST">
+                    <button type="submit">Update</button>
+                </form>
+            </td>
         </tr>
         <% }) %>
     </tbody>

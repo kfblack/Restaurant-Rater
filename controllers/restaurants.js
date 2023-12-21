@@ -35,10 +35,20 @@ async function show(req, res) {
     }
 }
 
+async function update(req, res) {
+    try {
+        let restaurant = await Restaurant.findById(req.params.id);
+        res.render("restaurants/update", restaurant)
+    } catch (err) {
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
 
 module.exports = {
     new: newRestaurant,
     create, 
     index, 
     show, 
+    update
 }
