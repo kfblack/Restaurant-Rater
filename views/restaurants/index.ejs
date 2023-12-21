@@ -8,10 +8,6 @@
             <th>Location</th>
             <th>Hours of Operation</th>
             <th>Reviews</th>
-            <!-- <th>Date</th>
-            <th>Rating</th>
-            <th>Description</th>
-            <th>User Name</th> -->
         </tr>
     </thead>
     <tbody>
@@ -21,10 +17,6 @@
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
             <td><a href="/restaurants/<%= r._id %>">Reviews</a></td>
-            <!-- <td><%= r.date %></td>
-            <td><%= r.rating %></td>
-            <td><%= r.description %></td>
-            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td> -->
         </tr>
         <% }) %>
     </tbody>

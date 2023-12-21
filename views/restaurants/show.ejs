@@ -1,6 +1,7 @@
+<%- include('../partials/header') %>
 
 <h2>Enter New Review</h2>
-<form action="/restaurants/<%= restaurants._id %>/reviews" method="POST">
+<form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
     <label>Date:
         <input type="datetime-local" name="date">
     </label><br>
@@ -18,25 +19,23 @@
     </label><br>
     <button type="submit">Submit Review</button>
 </form> 
-<% if (restaurants.reviews.length) { %>
     <table>
         <thead>
             <tr>
                 <th>Date</th>
                 <th>Rating</th>
                 <th>Description</th>
+                <th>User Name</th>
             </tr>
         </thead>
         <tbody>
-            <% restaurants.reviews.forEach(function(r) { %>
+            <% reviews.forEach(function(r) { %>
                 <tr>
                     <td><%= r.date %></td>
                     <td><%= r.rating %></td>
                     <td><%= r.description %></td>
+                    <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
                 </tr>
-            <% }) %>
+            <% }); %>
         </tbody>
     </table>
-<% } else { %>
-    <h5>No REviews Yet</h5>
-<% } %>

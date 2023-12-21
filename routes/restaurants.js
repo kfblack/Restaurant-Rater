@@ -9,4 +9,5 @@ router.get("/", ensureLoggedIn, restaurantsCtrl.index);
 router.post("/", ensureLoggedIn, restaurantsCtrl.create);
 router.get("/:id", ensureLoggedIn, restaurantsCtrl.show);
 
+
 module.exports = router;
