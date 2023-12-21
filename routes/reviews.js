@@ -1,11 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const reviewsCtrl = require("../controllers/reviews");
+const restaurantsCtrl = require("../controllers/restaurants");
 const ensureLoggedIn = require("../config/ensureLoggedIn");
 
 
-router.get("/new", ensureLoggedIn, reviewsCtrl.new);
-router.get("/", ensureLoggedIn, reviewsCtrl.index);
-router.post("/", ensureLoggedIn, reviewsCtrl.create);
+router.post("/restaurants/:id/reviews", ensureLoggedIn, restaurantsCtrl.create);
 
 module.exports = router;

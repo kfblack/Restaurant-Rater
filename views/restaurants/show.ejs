@@ -1,0 +1,42 @@
+
+<h2>Enter New Review</h2>
+<form action="/restaurants/<%= restaurants._id %>/reviews" method="POST">
+    <label>Date:
+        <input type="datetime-local" name="date">
+    </label><br>
+    <label>Rating:
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label><br>
+    <label>Description:
+        <input type="text" name="description">
+    </label><br>
+    <button type="submit">Submit Review</button>
+</form> 
+<% if (restaurants.reviews.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Rating</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% restaurants.reviews.forEach(function(r) { %>
+                <tr>
+                    <td><%= r.date %></td>
+                    <td><%= r.rating %></td>
+                    <td><%= r.description %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+<% } else { %>
+    <h5>No REviews Yet</h5>
+<% } %>
