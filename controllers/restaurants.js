@@ -57,6 +57,15 @@ async function update(req, res) {
     }
 }
 
+async function deleteRestaurant(req, res) {
+    try {
+        await Restaurant.findByIdAndDelete(req.params.id);
+        res.redirect("/restaurants");
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 
 module.exports = {
     new: newRestaurant,
@@ -64,5 +73,6 @@ module.exports = {
     index, 
     show, 
     edit, 
-    update
+    update,
+    delete: deleteRestaurant
 }

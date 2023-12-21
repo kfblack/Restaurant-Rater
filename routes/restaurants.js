@@ -10,6 +10,7 @@ router.post("/", ensureLoggedIn, restaurantsCtrl.create);
 router.get("/:id", ensureLoggedIn, restaurantsCtrl.show);
 router.get("/:id/edit", ensureLoggedIn, restaurantsCtrl.edit);
 router.put("/:id", ensureLoggedIn, restaurantsCtrl.update);
+router.delete("/:id", ensureLoggedIn, restaurantsCtrl.delete);
 
 
 module.exports = router;

@@ -10,6 +10,8 @@
             <th>Reviews</th>
 
             <th></th>
+
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +23,11 @@
             <td><a href="/restaurants/<%= r._id %>">Reviews</a></td>
             <td>
                 <a href="/restaurants/<%= r._id %>/edit"><button>Update</button></a>
+            </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form>
             </td>
         </tr>
         <% }) %>
