@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Review</h2>
+<form action="/reviews/<%= reviews._id %>?_method=PUT" method="POST">
+    <label>Date:
+        <input type="datetime-local" name="date" value="<%= reviews.date %>">
+    </label><br>
+    <label>Rating:
+        <select name="rating" value="<%= reviews.rating %>">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label><br>
+    <label>Description:
+        <input type="text" name="description" value="<%= reviews.description %>">
+    </label><br>
+    <button type="submit">Submit</button>
+</form>

@@ -28,6 +28,8 @@
                 <th>User Name</th>
 
                 <th></th>
+
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +45,9 @@
                             <button type="submit">X</button>
                         </form>
                         <% } %></td>
+                    </td>
+                    <td>
+                        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Update</button></a>
                     </td>
                 </tr>
             <% }); %>

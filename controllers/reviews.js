@@ -29,7 +29,32 @@ async function deleteReview(req, res) {
     }
 }
 
+async function edit(req, res) {
+    try {
+        let reviews = await Review.findById(req.params.id);
+        res.render("restaurants/update2", {reviews});
+    } catch (err) {
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
+async function update(req, res) {
+    try {
+        let reviews = await Review.findById(req.params.id);
+        let restaurant = await Restaurant.findById(reviews.restaurant);
+        reviews.date = req.body.date;
+        reviews.rating = req.body.rating;
+        reviews.description = req.body.description;
+        await reviews.save();
+        res.redirect(`/restaurants/${restaurant._id}`)
+    } catch (err) {
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
 module.exports = {
     create,
-    delete: deleteReview
+    delete: deleteReview, 
+    edit,
+    update
 }
