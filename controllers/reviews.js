@@ -48,7 +48,7 @@ async function update(req, res) {
         await reviews.save();
         res.redirect(`/restaurants/${restaurant._id}`)
     } catch (err) {
-        res.render("restaurants/show", {errMsg: err.message});
+        res.render("error", {errMsg: err.message});
     }
 }
 
