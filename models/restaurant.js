@@ -10,7 +10,7 @@ const restaurantSchema = new Schema({
     hours: {
         type: String,
         required: true
-    }, 
+    },
     likes: {
         type: Number,
         default: 0
