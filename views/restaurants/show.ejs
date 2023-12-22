@@ -30,6 +30,12 @@
                 <th></th>
 
                 <th></th>
+
+                <th></th>
+
+                <th></th>
+                <th>Likes</th>
+                <th>Dislikes</th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +55,18 @@
                     <td>
                         <a href="/reviews/<%= r._id %>/edit"><button type="submit">Update</button></a>
                     </td>
+                    <td>
+                        <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST">
+                            <button type="submit">Like</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/reviews/<%= r._id %>/dislike?_method=PUT" method="POST">
+                            <button type="submit">Dislike</button>
+                        </form>
+                    </td>
+                    <td><%= r.likes %></td>
+                    <td><%= r.dislikes %></td>
                 </tr>
             <% }); %>
         </tbody>

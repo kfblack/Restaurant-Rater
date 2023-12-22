@@ -12,6 +12,13 @@
             <th></th>
 
             <th></th>
+
+            <th></th>
+
+            <th></th>
+
+            <th>Likes</th>
+            <th>Dislikes</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +36,18 @@
                     <button type="submit">X</button>
                 </form>
             </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>/like?_method=PUT" method="POST">
+                    <button type="submit">Like</button>
+                </form>
+            </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>/dislike?_method=PUT" method="POST">
+                    <button type="submit">Dislike</button>
+                </form>
+            </td>
+            <td><%= r.likes %></td>
+            <td><%= r.dislikes %></td>
         </tr>
         <% }) %>
     </tbody>

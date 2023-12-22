@@ -66,6 +66,30 @@ async function deleteRestaurant(req, res) {
     }
 }
 
+async function updateLike(req, res) {
+    try {
+        let restaurant = await Restaurant.findById(req.params.id);
+        restaurant.likes += 1;
+        await restaurant.save();
+        res.redirect("/restaurants");
+    } catch (err) {
+        console.log(err);
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
+async function updateDislike(req, res) {
+    try {
+        let restaurant = await Restaurant.findById(req.params.id);
+        restaurant.dislikes += 1;
+        await restaurant.save();
+        res.redirect("/restaurants");
+    } catch (err) {
+        console.log(err);
+        res.render("restaurants/show", {errMsg: err.message});
+    }
+}
+
 
 module.exports = {
     new: newRestaurant,
@@ -74,5 +98,7 @@ module.exports = {
     show, 
     edit, 
     update,
-    delete: deleteRestaurant
+    delete: deleteRestaurant, 
+    updateLike, 
+    updateDislike
 }

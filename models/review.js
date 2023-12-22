@@ -27,7 +27,15 @@ const reviewSchema = new Schema({
         required: true 
     },
     userName: String,
-    userAvatar: String
+    userAvatar: String,
+    likes: {
+        type: Number,
+        default: 0
+    },
+    dislikes: {
+        type: Number,
+        default: 0,
+    },
 }, {
     timestamps: true
 });
