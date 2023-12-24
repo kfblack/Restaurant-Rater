@@ -36,10 +36,10 @@ const reviewSchema = new Schema({
         type: Number,
         default: 0,
     },
-    comment: {
+    comments: [{
         type: Schema.Types.ObjectId,
         ref: "Comment",
-    },
+    }],
 }, {
     timestamps: true
 });

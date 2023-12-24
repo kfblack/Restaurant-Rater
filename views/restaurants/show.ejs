@@ -37,6 +37,7 @@
                 <th>Likes</th>
                 <th>Dislikes</th>
                 <th>Add Comment</th>
+                <th>Comments</th>
             </tr>
         </thead>
         <tbody>
@@ -68,7 +69,10 @@
                     </td>
                     <td><%= r.likes %></td>
                     <td><%= r.dislikes %></td>
-                    <td><a href="/reviews/<%= r._id %>/new">Add Comment</a></td>
+                    <td><a href="/comments/reviews/<%= r._id %>/new">Add Comment</a></td>
+                    <td><% r.comments.forEach(c => { %>
+                        <%= c.description %>
+                    <% }) %></td>
                 </tr>
             <% }); %>
         </tbody>

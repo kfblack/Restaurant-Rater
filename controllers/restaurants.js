@@ -28,7 +28,7 @@ async function index(req, res) {
 async function show(req, res) {
     try {
         let restaurant = await Restaurant.findById(req.params.id);
-        let reviews = await Review.find({restaurant: restaurant._id})
+        let reviews = await Review.find({restaurant: restaurant._id}).populate("comments");
         res.render("restaurants/show", {title: "Restaurant Reviews", restaurant, reviews});
     } catch (err) {
         res.render("restaurants/show", {errMsg: err.message});
