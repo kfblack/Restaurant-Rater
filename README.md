@@ -17,6 +17,7 @@ In order to access the application, you need to navigate to the hyperlink below,
 - Mongoose
 - Express
 - Node.js
+- Bootstrap
 - VS Code
 - Warp
 - Heroku

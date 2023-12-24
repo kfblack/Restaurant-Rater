@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>All Restaurants</h2>
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Restaurant</th>
@@ -27,23 +27,23 @@
             <td><%= r.name %></td>
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
-            <td><a href="/restaurants/<%= r._id %>">Reviews</a></td>
+            <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
-                <a href="/restaurants/<%= r._id %>/edit"><button>Update</button></a>
+                <a href="/restaurants/<%= r._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
             </td>
             <td>
                 <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
+                    <button type="submit" class="btn btn-secondary">X</button>
                 </form>
             </td>
             <td>
                 <form action="/restaurants/<%= r._id %>/like?_method=PUT" method="POST">
-                    <button type="submit">Like</button>
+                    <button type="submit" class="btn btn-success">Like</button>
                 </form>
             </td>
             <td>
                 <form action="/restaurants/<%= r._id %>/dislike?_method=PUT" method="POST">
-                    <button type="submit">Dislike</button>
+                    <button type="submit" class="btn btn-danger">Dislike</button>
                 </form>
             </td>
             <td><%= r.likes %></td>
@@ -52,4 +52,7 @@
         <% }) %>
     </tbody>
 </table>
+<br><br><br><br><br><br><br><br><br><br>
+
+<%- include('../partials/footer') %>
 

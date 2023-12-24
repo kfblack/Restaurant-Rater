@@ -17,9 +17,9 @@
     <label>Description:
         <input type="text" name="description">
     </label><br>
-    <button type="submit">Submit Review</button>
+    <button type="submit" class="btn btn-info">Submit Review</button>
 </form> 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Date</th>
@@ -49,21 +49,21 @@
                     <td>
                         <% if (user?._id.equals(r.user)) { %>
                         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
+                            <button type="submit" class="btn btn-secondary">X</button>
                         </form>
                         <% } %></td>
                     </td>
                     <td>
-                        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Update</button></a>
+                        <a href="/reviews/<%= r._id %>/edit"><button type="submit" class="btn btn-warning">Update</button></a>
                     </td>
                     <td>
                         <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST">
-                            <button type="submit">Like</button>
+                            <button type="submit" class="btn btn-success">Like</button>
                         </form>
                     </td>
                     <td>
                         <form action="/reviews/<%= r._id %>/dislike?_method=PUT" method="POST">
-                            <button type="submit">Dislike</button>
+                            <button type="submit" class="btn btn-danger">Dislike</button>
                         </form>
                     </td>
                     <td><%= r.likes %></td>
@@ -73,3 +73,7 @@
             <% }); %>
         </tbody>
     </table>
+<br><br><br><br><br><br><br><br><br><br>
+
+
+<%- include('../partials/footer') %>
