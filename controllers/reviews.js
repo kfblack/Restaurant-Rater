@@ -84,5 +84,5 @@ module.exports = {
     edit,
     update, 
     updateLike, 
-    updateDislike
+    updateDislike, 
 }

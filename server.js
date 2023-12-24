@@ -14,6 +14,7 @@ require("./config/passport");
 const indexRouter = require('./routes/index');
 const restaurantRouter = require('./routes/restaurants');
 const reviewsRouter = require("./routes/reviews");
+const commentsRouter = require("./routes/comments");
 
 const storage = new Storage({
   keyFilename: `./assets/restaurant-rater-408717-aa329d5c86a8.json`,
@@ -22,7 +23,6 @@ const storage = new Storage({
 const bucketName = 'restaurant_image'
 const bucket = storage.bucket(bucketName)
 
-// Sending the upload request
 bucket.upload(
   "./assets/maydanpic.jpeg",
   {
@@ -34,7 +34,6 @@ bucket.upload(
     } else {
       console.log(`Image maydanpic.jpeg uploaded to ${bucketName}.`)
 
-        // Making file public to the internet
         // file.makePublic(async function (err) {
         // if (err) {
         //   console.error(`Error making file public: ${err}`)
@@ -78,6 +77,7 @@ app.use(methodOverride("_method"));
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantRouter);
 app.use("/", reviewsRouter);
+app.use("/comments", commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

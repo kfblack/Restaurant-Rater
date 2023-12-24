@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<h2>Enter New Comment</h2>
+<form action="/reviews/<%= review._id %>" method="POST">
+    <label>Description:
+        <input type="text" name="description">
+    </label><br>
+    <button type="submit">Submit</button>
+</form>

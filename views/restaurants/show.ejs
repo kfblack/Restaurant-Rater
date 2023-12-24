@@ -36,6 +36,7 @@
                 <th></th>
                 <th>Likes</th>
                 <th>Dislikes</th>
+                <th>Add Comment</th>
             </tr>
         </thead>
         <tbody>
@@ -67,6 +68,7 @@
                     </td>
                     <td><%= r.likes %></td>
                     <td><%= r.dislikes %></td>
+                    <td><a href="/reviews/<%= r._id %>/new">Add Comment</a></td>
                 </tr>
             <% }); %>
         </tbody>
