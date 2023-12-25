@@ -90,6 +90,15 @@ async function updateDislike(req, res) {
     }
 }
 
+async function search(req, res) {
+    const searchResult = req.query.q;
+    try {  
+        const results = await Restaurant.find({$text: {$search: searchResult} });
+        res.render("restaurants/results", {results})
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 module.exports = {
     new: newRestaurant,
@@ -100,5 +109,6 @@ module.exports = {
     update,
     delete: deleteRestaurant, 
     updateLike, 
-    updateDislike
+    updateDislike,
+    search
 }

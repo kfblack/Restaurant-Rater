@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<h1>Search Results</h1>
+<form action="/restaurants/search" method="get">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Location</th>
+            <th>Hours of Operation</th>
+            <th>Reviews</th>
+
+            <th></th>
+
+            <th></th>
+
+            <th></th>
+
+            <th></th>
+
+            <th>Likes</th>
+            <th>Dislikes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(r => { %>
+        <tr>
+            <td><%= r.name %></td>
+            <td><%= r.location %></td>
+            <td><%= r.hours %></td>
+            <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
+            <td>
+                <a href="/restaurants/<%= r._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
+            </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-secondary">X</button>
+                </form>
+            </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>/like?_method=PUT" method="POST">
+                    <button type="submit" class="btn btn-success">Like</button>
+                </form>
+            </td>
+            <td>
+                <form action="/restaurants/<%= r._id %>/dislike?_method=PUT" method="POST">
+                    <button type="submit" class="btn btn-danger">Dislike</button>
+                </form>
+            </td>
+            <td><%= r.likes %></td>
+            <td><%= r.dislikes %></td>
+        <% }) %>
+        </tr>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>
