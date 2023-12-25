@@ -69,7 +69,7 @@
                     </td>
                     <td><%= r.likes %></td>
                     <td><%= r.dislikes %></td>
-                    <td><a href="/comments/reviews/<%= r._id %>/new">Add Comment</a></td>
+                    <td><a href="/comments/reviews/<%= r._id %>/new" button type="button" class="btn btn-light">Add Comment</a></td>
                     <td><% r.comments.forEach(c => { %>
                         <%= c.description %>
                     <% }) %></td>
