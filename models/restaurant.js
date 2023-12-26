@@ -19,6 +19,14 @@ const restaurantSchema = new Schema({
         type: Number,
         default: 0,
     },
+    likedBy: {
+        type: [mongoose.Schema.Types.ObjectId],
+        default: [],
+    },
+    dislikedBy: {
+        type: [mongoose.Schema.Types.ObjectId],
+        default: [],
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",

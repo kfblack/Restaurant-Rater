@@ -56,8 +56,11 @@ async function updateLike(req, res) {
     try {
         let reviews = await Review.findById(req.params.id);
         let restaurant = await Restaurant.findById(reviews.restaurant);
-        reviews.likes += 1;
-        await reviews.save();
+        if (!reviews.likedBy.includes(req.user._id)) {
+            reviews.likes += 1;
+            reviews.likedBy.push(req.user._id);
+            await reviews.save();
+        }
         res.redirect(`/restaurants/${reviews.restaurant._id}`)
     } catch (err) {
         console.log(err);
@@ -69,8 +72,11 @@ async function updateDislike(req, res) {
     try {
         let reviews = await Review.findById(req.params.id);
         let restaurant = await Restaurant.findById(reviews.restaurant);
-        reviews.dislikes += 1;
-        await reviews.save();
+        if (!reviews.dislikedBy.includes(req.user._id)) {
+            reviews.dislikes += 1;
+            reviews.dislikedBy.push(req.user._id);
+            await reviews.save();
+        }
         res.redirect(`/restaurants/${reviews.restaurant._id}`)
     } catch (err) {
         console.log(err);

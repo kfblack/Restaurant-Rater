@@ -13,6 +13,14 @@ const commentSchema = new Schema({
         type: Number,
         default: 0,
     },
+    likedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        default: [],
+    }],
+    dislikedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        default: [],
+    }],
 }, {
     timestamps: true
 });

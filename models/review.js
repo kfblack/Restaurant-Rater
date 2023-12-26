@@ -36,6 +36,14 @@ const reviewSchema = new Schema({
         type: Number,
         default: 0,
     },
+    likedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        default: [],
+    }],
+    dislikedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        default: [],
+    }],
     comments: [{
         type: Schema.Types.ObjectId,
         ref: "Comment",
