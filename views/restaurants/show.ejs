@@ -82,6 +82,23 @@
                                     </form>
                                 <% } %></td>
                             </td>
+                            <td>
+                                <% if (user?._id.equals(r.user)) { %>
+                                <a href="/comments/<%= c._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
+                                <% } %>
+                            </td>
+                            <td>
+                                <form action="/comments/<%= c._id %>/like?_method=PUT" method="POST">
+                                    <button type="submit" class="btn btn-success">Like</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/comments/<%= c._id %>/dislike?_method=PUT" method="POST">
+                                    <button type="submit" class="btn btn-danger">Dislike</button>
+                                </form>
+                            </td>
+                            <td><%= c.likes %></td>
+                            <td><%= c.dislikes %></td>
                         </tr>
                     <% }) %></td>
                 </tr>
