@@ -19,6 +19,13 @@ const restaurantSchema = new Schema({
         type: Number,
         default: 0,
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true 
+    },
+    userName: String,
+    userAvatar: String,
 }, {
     timestamps: true
 });

@@ -55,7 +55,9 @@
                         <% } %></td>
                     </td>
                     <td>
+                        <% if (user?._id.equals(r.user)) { %>
                         <a href="/reviews/<%= r._id %>/edit"><button type="submit" class="btn btn-warning">Update</button></a>
+                        <% } %>
                     </td>
                     <td>
                         <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST">

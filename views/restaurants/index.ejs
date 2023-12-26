@@ -29,12 +29,16 @@
             <td><%= r.hours %></td>
             <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
+                <% if (user?._id.equals(r.user)) { %>
                 <a href="/restaurants/<%= r._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
+                <% } %>
             </td>
             <td>
+                <% if (user?._id.equals(r.user)) { %>
                 <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-secondary">X</button>
                 </form>
+                <% } %>
             </td>
             <td>
                 <form action="/restaurants/<%= r._id %>/like?_method=PUT" method="POST">

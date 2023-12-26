@@ -6,7 +6,11 @@ function newRestaurant(req, res) {
 }
 
 async function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     try {
+        console.log(req.body);
         await Restaurant.create(req.body);
         res.redirect("/restaurants");
     } catch (err) {
