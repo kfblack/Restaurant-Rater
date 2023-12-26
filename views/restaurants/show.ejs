@@ -36,8 +36,6 @@
                 <th></th>
                 <th>Likes</th>
                 <th>Dislikes</th>
-                <th>Add Comment</th>
-                <th>Comments</th>
             </tr>
         </thead>
         <tbody>
@@ -71,9 +69,20 @@
                     </td>
                     <td><%= r.likes %></td>
                     <td><%= r.dislikes %></td>
+                </tr>
+                <tr>
                     <td><a href="/comments/reviews/<%= r._id %>/new" button type="button" class="btn btn-light">Add Comment</a></td>
                     <td><% r.comments.forEach(c => { %>
-                        <%= c.description %>
+                        <tr>
+                            <td><%= c.description %></td>
+                            <td>
+                                <% if (user?._id.equals(r.user)) { %>
+                                    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-secondary">X</button>
+                                    </form>
+                                <% } %></td>
+                            </td>
+                        </tr>
                     <% }) %></td>
                 </tr>
             <% }); %>

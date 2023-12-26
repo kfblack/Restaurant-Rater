@@ -7,6 +7,7 @@
             <th>Restaurant</th>
             <th>Location</th>
             <th>Hours of Operation</th>
+            <th>User Name</th>
             <th>Reviews</th>
 
             <th></th>
@@ -27,6 +28,7 @@
             <td><%= r.name %></td>
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
             <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
                 <% if (user?._id.equals(r.user)) { %>

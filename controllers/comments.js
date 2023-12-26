@@ -19,7 +19,22 @@ async function newComment(req, res) {
     res.render("restaurants/comments", {errMsg: "", reviewId: req.params.id})
 }
 
+
+async function deleteComment(req, res) {
+    try {
+        const review = await Review.findOne({'comments': req.params.id});
+        let restaurant = await Restaurant.findById(review.restaurant);
+        review.comments.pull(req.params.id);
+        await review.save();
+        await Comment.findByIdAndDelete(req.params.id);
+        res.redirect(`/restaurants/${restaurant._id}`);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
 module.exports = {
     createComment, 
-    new: newComment
+    new: newComment,
+    delete: deleteComment,
 }
