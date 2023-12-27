@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Restaurant Rater</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -19,10 +20,10 @@
                 <form action="/restaurants/search" method="get">
                     <li class="nav-item"><input type="text" name="q" placeholder="Search..."><button type="submit" class="btn btn-outline-info">Search</button></li>
                 </form>
-                <li class="navbar-text">Restaurant Rater</li>
+                <li class="nav-text">Restaurant Rater™</li>
             </ul>
         <% } else { %>
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img class="avatar-login" src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>  
 

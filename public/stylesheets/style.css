@@ -1,36 +1,26 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0
+.nav-text {
+  margin-left: 75vmin;
+  font-size: 3.5vmin;
 }
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.nav-item {
+  padding: 0.5vmin;
 }
 
-a {
-  color: #00B7FF;
+.avatar {
+  height: 5vmin;
+  width: 5vmin;
+}
+
+.avatar-login {
+  height: 5vmin;
+  width: 5vmin;
 }
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  margin-left: 85vmin;
 }
 
-.login img {
-  height: 30px;
-}
-
-.review-user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.review-user img {
-  border-radius: 50%;
-  height: 40px;
+.all {
+  font-size: 4vmin;
 }

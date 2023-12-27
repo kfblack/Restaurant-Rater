@@ -1,5 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
+const axios = require("axios");
+const requestIp = require("request-ip");
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const {Storage} = require("@google-cloud/storage");
@@ -69,6 +71,21 @@ app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
+});
+
+app.use(requestIp.mw());
+
+app.get("/geolocation", async function (req, res) {
+  const ipAddress = req.clientIp;
+  const apiKey = process.env.IPSTACK_API_KEY;
+  try {
+    const response = await axios.get(`http://api.ipstack.com/${ipAddress}?access_key=${apiKey}&output=json`);
+    const data = response.data
+    res.json(data);
+  } catch (err) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  };
 });
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -44,7 +44,7 @@
                     <td><%= r.date %></td>
                     <td><%= r.rating %></td>
                     <td><%= r.description %></td>
-                    <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+                    <td class="review-user"><img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
                     <td>
                         <% if (user?._id.equals(r.user)) { %>
                         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
