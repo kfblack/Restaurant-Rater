@@ -81,6 +81,7 @@ app.get("/geolocation", async function (req, res) {
   try {
     const response = await axios.get(`http://api.ipstack.com/${ipAddress}?access_key=${apiKey}&output=json`);
     const data = response.data
+    console.log(response.data);
     res.json(data);
   } catch (err) {
       console.error(error);

@@ -14,7 +14,19 @@
         <% if (user) { %>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/restaurants">All Restaurants</a></li>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Restaurants
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/restaurants">All Restaurants</a></li>
+                        <li><a class="dropdown-item" href="/restaurants/United-Kingdom">United Kingdom</a></li>
+                        <li><a class="dropdown-item" href="/restaurants/USA">U.S.A</a></li>
+                        <li><a class="dropdown-item" href="/restaurants/France">France</a></li>
+                        <li><a class="dropdown-item" href="/restaurants/Spain">Spain</a></li>
+                        <li><a class="dropdown-item" href="/restaurants/Germany">Germany</a></li>
+                    </ul>
+                </div>
                 <li class="nav-item"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <form action="/restaurants/search" method="get">
