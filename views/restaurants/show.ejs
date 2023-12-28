@@ -87,6 +87,7 @@
                                 <a href="/comments/<%= c._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
                                 <% } %>
                             </td>
+                            <td class="review-user"><img class="avatar" alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
                             <td>
                                 <form action="/comments/<%= c._id %>/like?_method=PUT" method="POST">
                                     <button type="submit" class="btn btn-success">Like</button>

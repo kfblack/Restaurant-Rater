@@ -3,6 +3,9 @@ const Review = require("../models/review");
 const Comment = require("../models/comment");
 
 async function createComment(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     let review = await Review.findById(req.params.id);
     let restaurant = await Restaurant.findById(review.restaurant);
     try {

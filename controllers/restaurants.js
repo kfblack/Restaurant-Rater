@@ -110,6 +110,51 @@ async function search(req, res) {
     }
 }
 
+async function showSpain(req, res) {
+    try {
+        const results = await Restaurant.find({location: {$regex: /Spain/i}});
+        res.render("restaurants/spain", {results});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function showGreece(req, res) {
+    try {
+        const results = await Restaurant.find({location: {$regex: /Greece/i}});
+        res.render("restaurants/greece", {results});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function showUSA(req, res) {
+    try {
+        const results = await Restaurant.find({location: {$regex: /U.S.A/i}});
+        res.render("restaurants/usa", {results});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function showCanada(req, res) {
+    try {
+        const results = await Restaurant.find({location: {$regex: /Canada/i}});
+        res.render("restaurants/canada", {results});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function showFrance(req, res) {
+    try {
+        const results = await Restaurant.find({location: {$regex: /France/i}});
+        res.render("restaurants/france", {results});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     new: newRestaurant,
     create, 
@@ -120,5 +165,10 @@ module.exports = {
     delete: deleteRestaurant, 
     updateLike, 
     updateDislike,
-    search
+    search, 
+    showSpain, 
+    showGreece,
+    showUSA,
+    showCanada,
+    showFrance
 }
