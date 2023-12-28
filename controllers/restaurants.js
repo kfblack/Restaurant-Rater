@@ -157,17 +157,16 @@ async function showFrance(req, res) {
 
 async function showNear(req, res) {
     try { 
-        console.log('Query Parameters:', req.query);
-        let latitude = parseFloat(req.query.latitude);
-        let longitude = parseFloat(req.query.longitude);
-        const maxDistance = 0.15;
+        let latitude = parseFloat(req.params.latitude);
+        let longitude = parseFloat(req.params.longitude);
+        const maxDistance = 0.06;
         const results = await Restaurant.find({
             latitude: {
-                $gte: latitude,
+                $gte: latitude - maxDistance,
                 $lte: latitude + maxDistance,
             },
             longitude: {
-                $gte: longitude,
+                $gte: longitude - maxDistance,
                 $lte: longitude + maxDistance,
             },
         });

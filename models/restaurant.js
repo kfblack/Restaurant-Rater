@@ -46,5 +46,6 @@ const restaurantSchema = new Schema({
     timestamps: true
 });
 
+restaurantSchema.index({latitude: '2dsphere', longitude: '2dsphere'});
 restaurantSchema.index({name: "text"});
 module.exports = mongoose.model("Restaurant", restaurantSchema);

@@ -12,15 +12,19 @@
 </head>
 <body>
     <script>
-        navigator.geolocation.getCurrentPosition(position => {
-        console.log(position);
-        })
-    // axios.get('/geolocation')
-    //     .then(response => {
-    //         const data = response.data;
-    //         console.log(data);
-    // })
-    // .catch(error => console.error('Error fetching geolocation data:', error));
+        document.addEventListener('DOMContentLoaded', () => {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const nearMeLink = document.getElementById('nearMeLink');
+                    nearMeLink.href = `/restaurants/near/${latitude}/${longitude}`;
+                },
+                (error) => {
+                    console.error('Error getting user location:', error.message);
+                }
+            );
+        });
     </script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
         <% if (user) { %>
@@ -40,7 +44,7 @@
                     </ul>
                 </div>
                 <li class="nav-item"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
-                <li class="nav-item"><a class="nav-link" href="/restaurants/near">Near Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="/restaurants/near/:latitude/:longitude" id="nearMeLink">Near Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <form action="/restaurants/search" method="get">
                     <li class="nav-item"><input type="text" name="q" placeholder="Search..."><button type="submit" class="btn btn-outline-info">Search</button></li>
