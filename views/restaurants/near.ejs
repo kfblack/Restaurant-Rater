@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
-<h2 class="all">All Restaurants</h2>
+<h1>Restaurants Near Me</h1>
+<form action="/restaurants/near" method="GET">
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Restaurant</th>
+            <th>Miles Away</th>
             <th>Location</th>
             <th>Hours of Operation</th>
-            <th>User Name</th>
-
-            <th></th>
+            <th>Reviews</th>
 
             <th></th>
 
@@ -24,24 +24,19 @@
         </tr>
     </thead>
     <tbody>
-        <% restaurants.forEach(r => { %>
+        <% results.forEach(r => { %>
         <tr>
             <td><%= r.name %></td>
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
-            <td class="review-user"><img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
             <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
-                <% if (user?._id.equals(r.user)) { %>
                 <a href="/restaurants/<%= r._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
-                <% } %>
             </td>
             <td>
-                <% if (user?._id.equals(r.user)) { %>
                 <form action="/restaurants/<%= r._id %>?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-secondary">X</button>
                 </form>
-                <% } %>
             </td>
             <td>
                 <form action="/restaurants/<%= r._id %>/like?_method=PUT" method="POST">
@@ -55,11 +50,9 @@
             </td>
             <td><%= r.likes %></td>
             <td><%= r.dislikes %></td>
-        </tr>
         <% }) %>
+        </tr>
     </tbody>
 </table>
-<br><br><br><br><br><br><br><br><br><br>
 
 <%- include('../partials/footer') %>
-

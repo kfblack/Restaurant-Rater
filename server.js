@@ -73,21 +73,21 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(requestIp.mw());
+// app.use(requestIp.mw());
 
-app.get("/geolocation", async function (req, res) {
-  const ipAddress = req.clientIp;
-  const apiKey = process.env.IPSTACK_API_KEY;
-  try {
-    const response = await axios.get(`http://api.ipstack.com/${ipAddress}?access_key=${apiKey}&output=json`);
-    const data = response.data
-    console.log(response.data);
-    res.json(data);
-  } catch (err) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
-  };
-});
+// app.get("/geolocation", async function (req, res) {
+//   const ipAddress = req.clientIp;
+//   const apiKey = process.env.IPSTACK_API_KEY;
+//   try {
+//     const response = await axios.get(`http://api.ipstack.com/${ipAddress}?access_key=${apiKey}&output=json`);
+//     const data = response.data
+//     console.log(response.data);
+//     res.json(data);
+//   } catch (err) {
+//       console.error(error);
+//       res.status(500).json({ error: 'Internal Server Error' });
+//   };
+// });
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));

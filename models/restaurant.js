@@ -34,6 +34,14 @@ const restaurantSchema = new Schema({
     },
     userName: String,
     userAvatar: String,
+    latitude: {
+        type: Number,
+        required: true,
+    },
+    longitude: {
+        type: Number,
+        required: true,
+    },
 }, {
     timestamps: true
 });

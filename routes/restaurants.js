@@ -10,6 +10,7 @@ router.get("/USA", ensureLoggedIn, restaurantsCtrl.showUSA);
 router.get("/Canada", ensureLoggedIn, restaurantsCtrl.showCanada);
 router.get("/France", ensureLoggedIn, restaurantsCtrl.showFrance);
 router.get("/new", ensureLoggedIn, restaurantsCtrl.new);
+router.get("/near", ensureLoggedIn, restaurantsCtrl.showNear);
 router.get("/", ensureLoggedIn, restaurantsCtrl.index);
 router.post("/", ensureLoggedIn, restaurantsCtrl.create);
 router.get("/:id", ensureLoggedIn, restaurantsCtrl.show);

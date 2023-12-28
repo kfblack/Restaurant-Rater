@@ -155,6 +155,28 @@ async function showFrance(req, res) {
     }
 }
 
+async function showNear(req, res) {
+    try { 
+        console.log('Query Parameters:', req.query);
+        let latitude = parseFloat(req.query.latitude);
+        let longitude = parseFloat(req.query.longitude);
+        const maxDistance = 0.15;
+        const results = await Restaurant.find({
+            latitude: {
+                $gte: latitude,
+                $lte: latitude + maxDistance,
+            },
+            longitude: {
+                $gte: longitude,
+                $lte: longitude + maxDistance,
+            },
+        });
+        res.render("restaurants/near", {results})
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     new: newRestaurant,
     create, 
@@ -170,5 +192,6 @@ module.exports = {
     showGreece,
     showUSA,
     showCanada,
-    showFrance
+    showFrance,
+    showNear
 }
