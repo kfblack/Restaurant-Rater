@@ -10,7 +10,6 @@ async function create(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     try {
-        console.log(req.body);
         await Restaurant.create(req.body);
         res.redirect("/restaurants");
     } catch (err) {

@@ -7,7 +7,7 @@
             <th>Restaurant</th>
             <th>Location</th>
             <th>Hours of Operation</th>
-            <th>User Name</th>
+            <th>Website</th>
 
             <th></th>
 
@@ -29,7 +29,7 @@
             <td><%= r.name %></td>
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
-            <td class="review-user"><img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+            <td><a href="<%= r.site %>" target="_blank"><%= r.site %></a></td>
             <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
                 <% if (user?._id.equals(r.user)) { %>
@@ -59,7 +59,7 @@
         <% }) %>
     </tbody>
 </table>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <%- include('../partials/footer') %>
 

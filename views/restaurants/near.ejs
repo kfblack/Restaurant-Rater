@@ -1,6 +1,10 @@
 <%- include('../partials/header') %>
 
 <h1>Restaurants Near Me</h1>
+<% if (results.length === 0) { %>
+    <p>No Results Found!</p>
+    <p>The restaurant(s) you are looking for may not have yet been added to the database!</p>
+<% } else { %>
 <form action="/restaurants/near/:latitude/:longitude" method="GET">
 <table class="table table-striped">
     <thead>
@@ -54,5 +58,7 @@
         </tr>
     </tbody>
 </table>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 <%- include('../partials/footer') %>

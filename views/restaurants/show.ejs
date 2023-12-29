@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Enter New Review</h2>
+<p>~Please fill out all sections before submitting~</p>
 <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
     <label>Date:
         <input type="datetime-local" name="date">
@@ -106,7 +107,7 @@
             <% }); %>
         </tbody>
     </table>
-<br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <%- include('../partials/footer') %>

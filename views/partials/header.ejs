@@ -43,7 +43,11 @@
                         <li><a class="dropdown-item" href="/restaurants/Greece">Greece</a></li>
                     </ul>
                 </div>
-                <li class="nav-item"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
+                <% if (user._id.toString() === '658361cc184de103de4c321a') { %>
+                    <li class="nav-item"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
+                <% } else { %>
+                        <li class="hidden"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
+                <% } %>
                 <li class="nav-item"><a class="nav-link" href="/restaurants/near/:latitude/:longitude" id="nearMeLink">Near Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <form action="/restaurants/search" method="get">
@@ -54,5 +58,5 @@
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img class="avatar-login" src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
-    </nav>  
+    </nav> 
 

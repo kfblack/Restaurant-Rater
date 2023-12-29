@@ -42,6 +42,10 @@ const restaurantSchema = new Schema({
         type: Number,
         required: true,
     },
+    site: {
+        type: String,
+        required: true,
+    },
 }, {
     timestamps: true
 });

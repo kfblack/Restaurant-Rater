@@ -1,6 +1,10 @@
 <%- include('../partials/header') %>
 
 <h1>Search Results</h1>
+<% if (results.length === 0) { %>
+    <p>No Results Found!</p>
+    <p>The restaurant you are looking for may not have been added to the database, please try again with another restaurant!</p>
+<% } else { %>
 <form action="/restaurants/search" method="get">
 <table class="table table-striped">
     <thead>
@@ -8,6 +12,7 @@
             <th>Restaurant</th>
             <th>Location</th>
             <th>Hours of Operation</th>
+            <th>Website</th>
             <th>Reviews</th>
 
             <th></th>
@@ -28,6 +33,7 @@
             <td><%= r.name %></td>
             <td><%= r.location %></td>
             <td><%= r.hours %></td>
+            <td><%= r.site %></td>
             <td><a href="/restaurants/<%= r._id %>" button type="button" class="btn btn-primary" >Reviews</a></td>
             <td>
                 <a href="/restaurants/<%= r._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
@@ -53,5 +59,7 @@
         </tr>
     </tbody>
 </table>
+<% } %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <%- include('../partials/footer') %>
