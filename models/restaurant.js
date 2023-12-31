@@ -34,11 +34,11 @@ const restaurantSchema = new Schema({
     },
     userName: String,
     userAvatar: String,
-    latitude: {
+    lat: {
         type: Number,
         required: true,
     },
-    longitude: {
+    long: {
         type: Number,
         required: true,
     },
@@ -50,6 +50,6 @@ const restaurantSchema = new Schema({
     timestamps: true
 });
 
-restaurantSchema.index({latitude: '2dsphere', longitude: '2dsphere'});
+// restaurantSchema.index({latitude: '2dsphere', longitude: '2dsphere'});
 restaurantSchema.index({name: "text"});
 module.exports = mongoose.model("Restaurant", restaurantSchema);

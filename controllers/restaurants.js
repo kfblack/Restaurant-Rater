@@ -160,11 +160,11 @@ async function showNear(req, res) {
         let longitude = parseFloat(req.params.longitude);
         const maxDistance = 0.06;
         const results = await Restaurant.find({
-            latitude: {
+            lat: {
                 $gte: latitude - maxDistance,
                 $lte: latitude + maxDistance,
             },
-            longitude: {
+            long: {
                 $gte: longitude - maxDistance,
                 $lte: longitude + maxDistance,
             },

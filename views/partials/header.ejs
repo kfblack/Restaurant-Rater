@@ -12,18 +12,22 @@
 </head>
 <body>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    const nearMeLink = document.getElementById('nearMeLink');
-                    nearMeLink.href = `/restaurants/near/${latitude}/${longitude}`;
-                },
-                (error) => {
-                    console.error('Error getting user location:', error.message);
-                }
-            );
+        document.addEventListener('DOMContentLoaded', async () => {
+        const nearMeLink = document.getElementById('nearMeLink');
+        const getCoords = async () => {
+            const pos = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+        return {
+            long: pos.coords.longitude,
+            lat: pos.coords.latitude,
+            };
+        };
+        const coords = await getCoords();
+        const latitude = coords.lat;
+        const longitude = coords.long;
+        console.log(latitude, longitude);
+        nearMeLink.href = `/restaurants/near/${latitude}/${longitude}`;
         });
     </script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
@@ -48,7 +52,7 @@
                 <% } else { %>
                         <li class="hidden"><a class="nav-link" href="/restaurants/new">New Restaurant</a></li>
                 <% } %>
-                <li class="nav-item"><a class="nav-link" href="/restaurants/near/:latitude/:longitude" id="nearMeLink">Near Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="/restaurants/near" id="nearMeLink">Near Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <form action="/restaurants/search" method="get">
                     <li class="nav-item"><input type="text" name="q" placeholder="Search..."><button type="submit" class="btn btn-outline-info">Search</button></li>
