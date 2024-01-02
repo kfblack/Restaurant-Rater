@@ -29,7 +29,8 @@ In order to access the application, you need to navigate to the hyperlink below,
 - [ ] Allow for incorporation of 3rd Party API's, such as a restaurant API
 - [x] Add location feature to specify reviews/restaurants near your location
 - [ ] Incorporate more features, such as reviews for alternate products other than restaurants
-- [ ] Allow the user to add photos of their review
+- [ ] Allow the user to add photos of their review 
+- [ ] Add link to reservation website when accessing the restaurant 
 ***
 #### **_Credits_**
 
