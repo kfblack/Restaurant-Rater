@@ -22,7 +22,7 @@ In order to access the application, you need to navigate to the hyperlink below,
 - Heroku
 ***
 #### **_Getting Started_**
-[Click here to access the app!](https://restaurant-rater-cc16561bec50.herokuapp.com/) | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD](https://drive.google.com/file/d/1VMSTR3sEYq-aAOYBFPLRaMHZ3TUr-1tT/view?usp=sharing)
+[Click here to access the app!](https://www.restaurant-rate.com/) | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD](https://drive.google.com/file/d/1VMSTR3sEYq-aAOYBFPLRaMHZ3TUr-1tT/view?usp=sharing)
 
 ***
 #### **_Future Updates_**
