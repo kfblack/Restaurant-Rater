@@ -35,4 +35,4 @@ In order to access the application, you need to navigate to the hyperlink below,
 #### **_Credits_**
 
 ##### Images: [Lamia's Fish Market](https://tripleseat.com/blog/10-questions-with-lamias-fish-market/) | [Nara-Ya](https://www.opentable.com/r/nara-ya-washington) | [Sirocco](https://www.tripadvisor.com/Restaurant_Review-g293916-d814516-Reviews-Sirocco_Restaurant-Bangkok.html) | [Beauty & Essex](https://taogroup.com/venues/beauty-essex-new-york/) | [Alchemist](https://www.cntraveler.com/restaurants/copenhagen/alchemist) | [Peak](https://www.peaknyc.com/) | [Tattu](https://www.tripadvisor.com/Restaurant_Review-g186411-d12516944-Reviews-Tattu_Leeds-Leeds_West_Yorkshire_England.html)
-##### Code Help: [Debugging Help](https://openai.com/blog/chatgpt) | [Geospatial Feature](https://medium.com/@galford151/mongoose-geospatial-queries-with-near-59800b79c0f6) 
+##### Code Help: [Geospatial Feature](https://medium.com/@galford151/mongoose-geospatial-queries-with-near-59800b79c0f6) 
