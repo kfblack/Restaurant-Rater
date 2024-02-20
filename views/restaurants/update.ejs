@@ -1,18 +1,23 @@
 <%- include('../partials/header') %>
 
-<h2>Edit Restaurant</h2>
-<form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
-    <label>Name:
-        <input type="text" name="name" value="<%= restaurant.name %>">
-    </label><br>
-    <label>Location:
-        <input type="text" name="location" value="<%= restaurant.location %>">
-    </label><br>
-    <label>Hours of Operation:
-        <input type="text" name="hours" value="<%= restaurant.hours %>">
-    </label><br>
-    <button type="submit" class="btn btn-info">Submit</button>
-</form>
+<div class="container">
+    <h2 class="text-center mt-4">Edit Restaurant</h2>
+    <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST" container="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= restaurant.name %>">
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" value="<%= restaurant.location %>">
+        </div>
+        <div class="mb-3">
+            <label for="hours" class="form-label">Hours of Operation:</label>
+            <input type="text" class="form-control" id="hours" name="hours" value="<%= restaurant.hours %>">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 

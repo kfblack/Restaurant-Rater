@@ -1,12 +1,15 @@
 <%- include('../partials/header') %>
 
-<h2>Enter New Comment</h2>
-<form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
-    <label>Description:
-        <input type="text" name="description">
-    </label><br>
-    <button type="submit" class="btn btn-info">Submit</button>
-</form>
+<div class="container">
+    <h2 class="text-center mt-4">Enter New Comment</h2>
+    <form action="/comments/<%= comment._id %>?_method=PUT" method="POST" container="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <%- include('../partials/footer') %>

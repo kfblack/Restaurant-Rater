@@ -1,24 +1,29 @@
 <%- include('../partials/header') %>
 
-<h2>Edit Review</h2>
-<form action="/reviews/<%= reviews._id %>?_method=PUT" method="POST">
-    <label>Date:
-        <input type="datetime-local" name="date" value="<%= reviews.date %>">
-    </label><br>
-    <label>Rating:
-        <select name="rating" value="<%= reviews.rating %>">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </label><br>
-    <label>Description:
-        <input type="text" name="description" value="<%= reviews.description %>">
-    </label><br>
-    <button type="submit" class="btn btn-info">Submit</button>
-</form>
+<div class="container">
+    <h2 class="text-center mt-4">Edit Review</h2>
+    <form action="/reviews/<%= reviews._id %>?_method=PUT" method="POST" container="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="date" class="form-label">Date:</label>
+            <input type="datetime-local" class="form-control" id="date" name="date" value="<%= reviews.date %>">
+        </div>
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating:</label>
+            <select class="form-select" id="rating" name="rating" value="<%= reviews.rating %>">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="description" name="description" value="<%= reviews.description %>">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
