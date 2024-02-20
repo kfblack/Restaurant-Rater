@@ -1,25 +1,31 @@
 <%- include('../partials/header') %>
 
-<h2>Enter New Review</h2>
-<p>~Please fill out all sections before submitting~</p>
-<form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
-    <label>Date:
-        <input type="datetime-local" name="date">
-    </label><br>
-    <label>Rating:
-        <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </label><br>
-    <label>Description:
-        <input type="text" name="description">
-    </label><br>
-    <button type="submit" class="btn btn-info">Submit Review</button>
-</form> 
+<div class="container">
+    <h2 class="text-center mt-4">Enter New Review</h2>
+    <p class="text-center">~Please fill out all sections before submitting~</p>
+    <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST" container="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="date" class="form-label">Date:</label>
+            <input type="datetime-local" class="form-control" id="date" name="date">
+        </div>
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating:</label>
+            <select class="form-select" id="rating" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+        <button type="submit" class="btn btn-info">Submit Review</button>
+        <br><br><br>
+    </form> 
+</div>
     <table class="table table-striped">
         <thead>
             <tr>

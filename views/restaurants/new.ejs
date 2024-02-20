@@ -1,27 +1,37 @@
 <%- include('../partials/header') %>
 
-<h2>Enter New Restaurant</h2>
-<form action="/restaurants" method="POST">
-    <label>Name:
-        <input type="text" name="name">
-    </label><br>
-    <label>Location:
-        <input type="text" name="location">
-    </label><br>
-    <label>Website Link: 
-        <input type="text" name="site">
-    </label>
-    <label>Latitude:
-        <input type="number" name="lat" step="0.01">
-    </label><br>
-    <label>Longitude:
-        <input type="number" name="long" step="0.01">
-    </label><br>
-    <label>Hours of Operation:
-        <input type="text" name="hours">
-    </label><br>
+<div class="container">
+    <h2 class="text-center mt-4">Enter New Restaurant</h2>
+<form action="/restaurants" method="POST" container="w-50 mx-auto">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" class="form-control" id="location" name="location">
+    </div>
+    <div class="mb-3">
+        <label for="site" class="form-label">Website Link:</label>
+        <input type="text" class="form-control" id="site" name="site">
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="lat" class="form-label">Latitude:</label>
+            <input type="number" class="form-control" id="lat" name="lat" step="0.01">
+        </div>
+        <div class="col">
+            <label for="long" class="form-label">Longitude:</label>
+            <input type="number" class="form-control" id="long" name="long" step="0.01">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="hours" class="form-label">Hours of Operation:</label>
+        <input type="text" class="form-control" id="hours" name="hours">
+    </div>
     <button type="submit" class="btn btn-info">Submit</button>
 </form>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <%- include('../partials/footer') %>

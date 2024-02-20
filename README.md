@@ -1,16 +1,15 @@
 # Restaurant Rater
-#### Date: 01/03/2023
+#### Date: 01/03/2024
 #### By: Kalin Black 
 #### [Linkedin](https://www.linkedin.com/in/kalin-black/) | [GitHub](https://github.com/kfblack)
 ***
 #### **_Description_**
-This project is a full-stack application involving the use of several technologies, as listed below. This app was created for the General Assembly software engineering immersive program as project #2, during Week 6 of the cohort. The application allows the user to view restaurants, reviews and more, and allows you to make your own reviews on pre-existing restaurants while also commenting on other's posts, liking/disliking/etc.
+This project is a full-stack application involving the use of several technologies, as listed below. This app was created for the General Assembly software engineering immersive program as project #2, during Week 6 of the cohort. The application allows the user to view restaurants, create reviews, and allows you to make your own reviews on pre-existing restaurants while also commenting on other's posts, liking/disliking/etc.
 
 In order to access the application, you need to navigate to the hyperlink below, then will be asked to login via Google. This is recommended since without logging in, you will have a limited scope of what you can view/what features you may access. From there, you will have access to all the features of the application, including making reviews, commenting/rating others' reviews, and much more! You may also choose to logout once you are finished using the application!
 ***
 #### **_Technologies Used_**
-- HTML/EJS
-- CSS
+- HTML/CSS
 - JavaScript
 - MongoDB
 - Mongoose
@@ -24,10 +23,21 @@ In order to access the application, you need to navigate to the hyperlink below,
 #### **_Getting Started_**
 [Click here to access the app!](https://www.restaurant-rate.com/) | [Excalidraw Wireframe](https://excalidraw.com/#json=ivJJTgMLFwtVtDXyEt7R_,jUnATw_mheq1Wz3KYh3oRg) | [Trello Board](https://trello.com/invite/b/Wjegq65S/ATTI6ed427af728b4fa8b42fe9f968bfe629AB463315/restaurant-rater) | [Draw.io ERD](https://drive.google.com/file/d/1VMSTR3sEYq-aAOYBFPLRaMHZ3TUr-1tT/view?usp=sharing)
 
+#### **_Screenshots_**
+
+##### Restaurants List 
+![All Restaurants](https://i.postimg.cc/kGsLmYgg/Screenshot-2024-02-20-at-11-41-56-AM.png)
+
+##### "Near Me" Tab
+![Geolocation Function](https://i.postimg.cc/wj7ZCV89/Screenshot-2024-02-20-at-11-42-12-AM.png)
+
+##### Reviews and Comments
+![On a specific restaurant](https://i.postimg.cc/CK8t1xxt/Screenshot-2024-02-20-at-11-42-37-AM.png)
+
 ***
 #### **_Future Updates_**
-- [ ] Allow for incorporation of 3rd Party API's, such as a restaurant API
 - [x] Add location feature to specify reviews/restaurants near your location
+- [ ] Allow for incorporation of 3rd Party API's, such as a restaurant API
 - [ ] Incorporate more features, such as reviews for alternate products other than restaurants
 - [ ] Allow the user to add photos of their review 
 - [ ] Add link to reservation website when accessing the restaurant 
