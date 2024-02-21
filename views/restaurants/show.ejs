@@ -30,49 +30,53 @@
     <% reviews.forEach(function(r) { %>
     <div class="card mb-3">
         <div class="card-header">
-            <h5>Review by <%= r.userName %> on <%= r.date %></h5>
+            <h5>Review by <img src='<%= r.userAvatar %>' width="40" height="40">  <%= r.userName %> on <%= r.date %></h5>
         </div>
         <div class="card-body">
             <h6 class="card-title">Rating:<%= r.rating %></h6>
             <p class="card-text"><%= r.description %></p>
+            <div class="d-flex">
             <% if (user?._id.equals(r.user)) { %>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="btn btn-secondary">X</button>
+                    <button type="submit" class="btn btn-secondary btn-sm me-1">X</button>
                 </form>
             <% } %></td>
             <% if (user?._id.equals(r.user)) { %>
-                <a href="/reviews/<%= r._id %>/edit"><button type="submit" class="btn btn-warning">Update</button></a>
+                <a href="/reviews/<%= r._id %>/edit"><button type="submit" class="btn btn-warning btn-sm me-1">Update</button></a>
             <% } %>
-            <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST">
-                <button type="submit" class="btn btn-success">Like (<%= r.likes %>)</button>
+            <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST" class="me-1">
+                <button type="submit" class="btn btn-success btn-sm">Like (<%= r.likes %>)</button>
             </form>
-            <form action="/reviews/<%= r._id %>/dislike?_method=PUT" method="POST">
-                <button type="submit" class="btn btn-danger">Dislike (<%= r.dislikes %>)</button>
+            <form action="/reviews/<%= r._id %>/dislike?_method=PUT" method="POST" class="me-1">
+                <button type="submit" class="btn btn-danger btn-sm">Dislike (<%= r.dislikes %>)</button>
             </form>
+            </div>
         </div>
         <div class="card-footer bg-light">
             <h6 class="mb-2">Comments:</h6>
             <div class="ms-3">
                 <% r.comments.forEach(c => { %>
                     <div class="mb-2">
-                        <p class="mb-0"><strong><%= c.userName %>:</strong> <%= c.description %></p>
-                        <% if (user?._id.equals(r.user)) { %>
-                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-secondary">X</button>
+                        <p class="mb-4"><strong><img src='<%= c.userAvatar %>' width="40" height="40">  <%= c.userName %>:</strong> <%= c.description %></p>
+                        <div class="d-flex">
+                            <% if (user?._id.equals(r.user)) { %>
+                                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-secondary me-1 btn-sm">X</button>
+                                </form>
+                            <% } %>
+                            <% if (user?._id.equals(r.user)) { %>
+                                <a href="/comments/<%= c._id %>/edit"><button type="button" class="btn btn-warning me-1 btn-sm">Update</button></a>
+                            <% } %>
+                            <form action="/comments/<%= c._id %>/like?_method=PUT" method="POST" class="me-1">
+                                <button type="submit" class="btn btn-success btn-sm">Like (<%= c.likes %>)</button>
                             </form>
-                        <% } %>
-                        <% if (user?._id.equals(r.user)) { %>
-                            <a href="/comments/<%= c._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
-                        <% } %>
-                        <form action="/comments/<%= c._id %>/like?_method=PUT" method="POST">
-                            <button type="submit" class="btn btn-success">Like (<%= c.likes %>)</button>
-                        </form>
-                        <form action="/comments/<%= c._id %>/dislike?_method=PUT" method="POST">
-                            <button type="submit" class="btn btn-danger">Dislike (<%= c.dislikes %>)</button>
-                        </form>
+                            <form action="/comments/<%= c._id %>/dislike?_method=PUT" method="POST" class="me-1">
+                                <button type="submit" class="btn btn-danger btn-sm">Dislike (<%= c.dislikes %>)</button>
+                            </form>
+                        </div>
                     </div>
                 <% }) %>
-                <a href="/comments/reviews/<%= r._id %>/new" button type="button" class="btn btn-light">Add Comment</a>
+                <a href="/comments/reviews/<%= r._id %>/new" button type="button" class="btn btn-secondary btn-sm mt-2">Add Comment</a>
             </div>
         </div>
     </div>
