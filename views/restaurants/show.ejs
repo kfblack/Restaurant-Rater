@@ -26,7 +26,59 @@
         <br><br><br>
     </form> 
 </div>
-    <table class="table table-striped">
+<div class="container mt-5">
+    <% reviews.forEach(function(r) { %>
+    <div class="card mb-3">
+        <div class="card-header">
+            <h5>Review by <%= r.userName %> on <%= r.date %></h5>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">Rating:<%= r.rating %></h6>
+            <p class="card-text"><%= r.description %></p>
+            <% if (user?._id.equals(r.user)) { %>
+                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-secondary">X</button>
+                </form>
+            <% } %></td>
+            <% if (user?._id.equals(r.user)) { %>
+                <a href="/reviews/<%= r._id %>/edit"><button type="submit" class="btn btn-warning">Update</button></a>
+            <% } %>
+            <form action="/reviews/<%= r._id %>/like?_method=PUT" method="POST">
+                <button type="submit" class="btn btn-success">Like (<%= r.likes %>)</button>
+            </form>
+            <form action="/reviews/<%= r._id %>/dislike?_method=PUT" method="POST">
+                <button type="submit" class="btn btn-danger">Dislike (<%= r.dislikes %>)</button>
+            </form>
+        </div>
+        <div class="card-footer bg-light">
+            <h6 class="mb-2">Comments:</h6>
+            <div class="ms-3">
+                <% r.comments.forEach(c => { %>
+                    <div class="mb-2">
+                        <p class="mb-0"><strong><%= c.userName %>:</strong> <%= c.description %></p>
+                        <% if (user?._id.equals(r.user)) { %>
+                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-secondary">X</button>
+                            </form>
+                        <% } %>
+                        <% if (user?._id.equals(r.user)) { %>
+                            <a href="/comments/<%= c._id %>/edit"><button type="button" class="btn btn-warning">Update</button></a>
+                        <% } %>
+                        <form action="/comments/<%= c._id %>/like?_method=PUT" method="POST">
+                            <button type="submit" class="btn btn-success">Like (<%= c.likes %>)</button>
+                        </form>
+                        <form action="/comments/<%= c._id %>/dislike?_method=PUT" method="POST">
+                            <button type="submit" class="btn btn-danger">Dislike (<%= c.dislikes %>)</button>
+                        </form>
+                    </div>
+                <% }) %>
+                <a href="/comments/reviews/<%= r._id %>/new" button type="button" class="btn btn-light">Add Comment</a>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
+    <!-- <table class="table table-striped">
         <thead>
             <tr>
                 <th>Date</th>
@@ -44,8 +96,8 @@
                 <th>Likes</th>
                 <th>Dislikes</th>
             </tr>
-        </thead>
-        <tbody>
+        </thead> -->
+        <!-- <tbody>
             <% reviews.forEach(function(r) { %>
                 <tr>
                     <td><%= r.date %></td>
@@ -111,8 +163,8 @@
                     <% }) %></td>
                 </tr>
             <% }); %>
-        </tbody>
-    </table>
+        </tbody> -->
+    <!-- </table> -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
